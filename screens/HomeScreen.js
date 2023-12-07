@@ -60,6 +60,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#0077b6',
         alignItems: 'center',
         justifyContent: 'center',
+        shadowOpacity: 1,
+          shadowRadius: 20,
+          shadowColor: '#01497c',
     },
     container: {
         flex: 1,
