@@ -10,6 +10,7 @@ import { Linking } from "react-native";
 import { NeuView } from "neumorphism-ui";
 import { NeuButton } from "neumorphism-ui";
 import Information from '../components/Information';
+import Navigation from '../components/Navigation';
 
 
 const StartEngineScreen = () => {
@@ -18,14 +19,14 @@ const StartEngineScreen = () => {
   return (
     <SafeAreaView style={styles.container}
       screenOptions={{ headerShown: false }}>
-      <View style={tw`p-5 right-20 top-20`}>
+      <View style={tw`p-5 right-20 top-32`}>
 
-        <Text style={tw`text-gray-400 left-36 top-11`}>TESLA</Text>
+        <Text style={tw`text-gray-400 left-36 top-7`}>TESLA</Text>
         <Image
           style={{
             width: 170,
             height: 170,
-            top: -5,
+            top: -21,
             left: 80,
             resizeMode: "contain",
           }}
@@ -47,11 +48,11 @@ const StartEngineScreen = () => {
         </TouchableOpacity>
       </View>
       <View>
-        <Image source={require('../assets/cby.png')} style={{ height: 310, width: 355, left: 6, bottom: 146 }} />
+        <Image source={require('../assets/cby.png')} style={{ height: 310, width: 355, left: 6, bottom: 113 }} />
         
       </View>
 
-      <View style={tw` h-1/6 right-32 bottom-36 `}>
+      <View style={tw` h-1/6 right-32 bottom-28 `}>
       <View style={{flexDirection:'row', alignItems:'center',justifyContent:'space-between'}}>
       <Text style={tw`font-semibold text-white mr-8 ml-72`}>
       <Image source={require('../assets/battery.png')} style={{ height:18, width: 18}} />54%</Text>
@@ -63,7 +64,8 @@ const StartEngineScreen = () => {
       </View>
 
       <Information/>
-      
+     
+     <Navigation/>
 
     </SafeAreaView>
   )
@@ -93,10 +95,10 @@ const styles = StyleSheet.create({
     height: 53,
     backgroundColor: "#001426",
     borderRadius: "100%",
-    top: -195,
+    top: -188,
     left: -17,
     shadowOpacity: 1,
-    shadowRadius: 44,
+    shadowRadius: 3,
     shadowColor: '#014f86',
 
   },
@@ -106,10 +108,10 @@ const styles = StyleSheet.create({
     height: 53,
     backgroundColor: "#001426",
     borderRadius: "100%",
-    top: -250,
+    top: -240,
     right: -290,
     shadowOpacity: 1,
-    shadowRadius: 44,
+    shadowRadius: 3,
     shadowColor: '#014f86',
 
   }

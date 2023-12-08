@@ -4,6 +4,7 @@ import tw from 'tailwind-react-native-classnames';
 import Pulse from 'react-native-pulse';
 import { useState } from 'react';
 import SelectableFlatlist from 'react-native-selectable-flatlist';
+import Navigation from './Navigation';
 
 
 const data = [
@@ -11,33 +12,42 @@ const data = [
         id:"123",
         title: "Engine",
         subtitle: "Sleeping Mode",
-        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1"
+        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1",
+        selected:false
     },
     {
         id:"125",
         title: "Climate",
         subtitle: "A/C is ON",
-        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1"
+        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1",
+        selected:false
     },
     {
         id:"326",
         title: "Tires",
         subtitle: "Low pressure",
-        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1"
+        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1",
+        selected:false
     },
-    {
-        id:"356",
-        title: "Location",
-        subtitle: "Milan, Italy ",
-        image: "https://i0.wp.com/whateverbrightthings.com/wp-content/uploads/2020/05/Dot-Icon-Blue.png?ssl=1"
-    },
+    
 ];
 
 const Information = () => {
     const [shouldShow, setshouldShow] = useState(false);
-    itemsSelected = (selectedItem) => {
-        console.log(selectedItem);
-      }
+    const [select, setSelect] = useState(data)
+    
+    const handleOnpress = (item) =>{
+        const newItem = select.map((val)=>{
+            if(val.id===item.id){
+                return {...val,selected:!val.selected}
+            }
+            else{
+                return val;
+            }
+        })
+        setSelect(newItem)
+    }
+    
     
 
     return (
@@ -45,16 +55,16 @@ const Information = () => {
             <Text style={tw`text-xl font-semibold text-gray-400 mb-2`}>Information</Text>
             <FlatList
                 horizontal
-                data={data}
+                data={select}
                 style={styles.flt}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item: { title, subtitle, image, id }, item }) => (
                     <TouchableOpacity style={styles.button}
-                        onPress={() => setshouldShow(!shouldShow,)}
+                        onPress={() => handleOnpress(item)}
                     >
                         <View>
                             {
-                                shouldShow ? (
+                                item.selected ? (
                                     <Image
                                         style={styles.dot}
                                         source={{ uri: image }}
@@ -70,6 +80,7 @@ const Information = () => {
 
                 )}
             />
+
         </View>
     )
 }
@@ -81,13 +92,14 @@ const styles = StyleSheet.create({
     info: {
         height: "20%",
         width: 200,
-        bottom: 220,
+        bottom: 185,
         right: 62
 
     },
     flt: {
         width: 400,
         height: 420,
+        right:10
     },
     button: {
         height: 100,
@@ -105,6 +117,7 @@ const styles = StyleSheet.create({
         bottom: 55,
         left: "59%",
         resizeMode: 'contain',
-    }
+    },
+   
 
 })
