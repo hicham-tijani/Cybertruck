@@ -80,7 +80,7 @@ const Information = () => {
 
                 )}
             />
-
+            <Text style={tw`text-xl font-semibold text-gray-400 absolute top-48 right-28`}>Navigation</Text>
         </View>
     )
 }
@@ -118,6 +118,6 @@ const styles = StyleSheet.create({
         left: "59%",
         resizeMode: 'contain',
     },
-   
+  
 
 })

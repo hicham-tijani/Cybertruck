@@ -1,20 +1,19 @@
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList , Button} from 'react-native';
 import React from 'react';
 import tw from "tailwind-react-native-classnames";
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack'
 import 'react-native-gesture-handler';
 import HomeScreen from './HomeScreen';
 import { Linking } from "react-native";
-import { NeuView } from "neumorphism-ui";
-import { NeuButton } from "neumorphism-ui";
 import Information from '../components/Information';
 import Navigation from '../components/Navigation';
+import { useState,useRef } from 'react';
+
 
 
 const StartEngineScreen = () => {
   const navigation = useNavigation();
+  
 
   return (
     <SafeAreaView style={styles.container}
@@ -37,7 +36,7 @@ const StartEngineScreen = () => {
         <TouchableOpacity style={styles.back}
           onPress={() => { navigation.navigate("HomeScreen"); }}
         >
-          <Image source={require('../assets/back.png')} style={{ height: 25, width: 30, top: 12, left: 12 }} />
+         <Image source={require('../assets/location.png')} style={{ height: 28, width: 28, top: 10, left: 12 }} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.info}
           onPress={() => {
@@ -60,13 +59,12 @@ const StartEngineScreen = () => {
       <Text style={tw`font-semibold text-lg text-gray-400 bottom-8 right-44`}>Status</Text>
       <Text style={tw`font-semibold text-white right-12`}><Image source={require('../assets/Temp.png')} style={{ height:18, width: 18}} />27 °C</Text>
       </View>
-      
+  
       </View>
 
       <Information/>
-     
-     <Navigation/>
-
+    <Navigation/>  
+    
     </SafeAreaView>
   )
 }
