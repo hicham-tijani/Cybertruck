@@ -59,7 +59,7 @@ const StartEngineScreen = () => {
       <Text style={tw`font-semibold text-lg text-gray-400 bottom-8 right-44`}>Status</Text>
       <Text style={tw`font-semibold text-white right-12`}><Image source={require('../assets/Temp.png')} style={{ height:18, width: 18}} />27 °C</Text>
       </View>
-  
+ 
       </View>
 
       <Information/>

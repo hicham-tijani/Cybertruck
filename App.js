@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import StartEngineScreen from './screens/StartEngineScreen';
 
+
 export default function App() {
   const Stack = createStackNavigator();
 
@@ -28,7 +29,7 @@ export default function App() {
       />
     </Stack.Navigator>
       </NavigationContainer>
-   
+  
   );
 }
 
