@@ -5,6 +5,7 @@ import 'react-native-gesture-handler'
 import {createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import StartEngineScreen from './screens/StartEngineScreen';
+import GeolocationScreen from './screens/GeolocationScreen';
 
 
 export default function App() {
@@ -23,6 +24,13 @@ export default function App() {
       <Stack.Screen 
       name="StartEngineScreen"
       component={StartEngineScreen}
+      options={{
+        headerShown: false,
+      }}
+      />
+      <Stack.Screen 
+      name="GeolocationScreen"
+      component={GeolocationScreen}
       options={{
         headerShown: false,
       }}

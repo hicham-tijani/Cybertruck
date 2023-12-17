@@ -46,7 +46,7 @@ const Navigation = () => {
     const [panelProps, setPanelProps] = useState({
         fullWidth: true,
         openSmall: true,
-        showCloseButton: true,
+        showCloseButton: false,
         onClose: () => closePanel(),
         onPressCloseButton: () => closePanel(),
 
@@ -81,7 +81,7 @@ const Navigation = () => {
 
     const [isActive, setIsActive] = useState(false);
 
-    
+
 
     return (
 
@@ -134,10 +134,13 @@ const Navigation = () => {
                         thumbColor="#669bbc"
                         trackColor="black"
                     />
-
                 </View>
 
-                <Text style={styles.speed}>Fan Speed  |  {sliderValue}</Text>
+                <TouchableOpacity style={styles.speed2}>
+                    <Text style={tw`text-white top-1 font-semibold`}>{sliderValue}</Text>
+                </TouchableOpacity>
+
+                <Text style={styles.speed}>Fan Speed</Text>
 
                 <View style={styles.sliderWidth}>
                     <Slider
@@ -158,8 +161,8 @@ const Navigation = () => {
                     />
                 </View>
 
-                <View style={{ top: 175, left: 35 }}>
-                    <Text style={tw`text-xl font-semibold text-white bottom-1 left-36 bottom-6 mr-14`}>Mode</Text>
+                <View style={{ top: 147, left: 35 }}>
+                    <Text style={tw`text-xl font-semibold text-white bottom-1 left-36 bottom-6`}>Mode</Text>
                     <FlatList
                         horizontal
                         data={select}
@@ -216,13 +219,24 @@ const styles = StyleSheet.create({
     info: {
         height: "16%",
         width: "100%",
-        bottom: 110,
+        bottom: 130,
         borderRadius: 37,
         backgroundColor: "#002139",
         shadowOpacity: 1,
         shadowRadius: 4,
         shadowColor: '#014f86',
 
+    },
+    speed2: {
+        backgroundColor: "#014f86",
+        height: 25,
+        width: 36,
+        color: "white",
+        alignContent: "center",
+        alignItems: "center",
+        borderRadius: 10,
+        top:102,
+        left:245
     },
     button: {
         height: 68,
@@ -318,7 +332,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "700",
         fontSize: 16,
-        top: 100,
+        top: 80,
         left: 150
     },
     thumb: {
@@ -349,7 +363,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1,
     },
     sliderWidth: {
-        top: 115,
+        top: 95,
         marginRight: 35,
         marginLeft: 35
 

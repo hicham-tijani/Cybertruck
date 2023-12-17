@@ -8,7 +8,7 @@ import { Linking } from "react-native";
 import Information from '../components/Information';
 import Navigation from '../components/Navigation';
 import { useState,useRef } from 'react';
-
+import GeolocationScreen from './GeolocationScreen';
 
 
 const StartEngineScreen = () => {
@@ -18,9 +18,9 @@ const StartEngineScreen = () => {
   return (
     <SafeAreaView style={styles.container}
       screenOptions={{ headerShown: false }}>
-      <View style={tw`p-5 right-20 top-32`}>
+      <View style={tw`p-5 right-20 top-40`}>
 
-        <Text style={tw`text-gray-400 left-36 top-7`}>TESLA</Text>
+      <Image source={require('../assets/Teslalogo.png')} style={{ height: 18, width: 59, left: 133 , top:24}} />
         <Image
           style={{
             width: 170,
@@ -34,9 +34,9 @@ const StartEngineScreen = () => {
           }}
         />
         <TouchableOpacity style={styles.back}
-          onPress={() => { navigation.navigate("HomeScreen"); }}
+          onPress={() => { navigation.navigate("GeolocationScreen"); }}
         >
-         <Image source={require('../assets/location.png')} style={{ height: 28, width: 28, top: 10, left: 12 }} />
+         <Image source={require('../assets/position.png')} style={{ height: 28, width: 28, top: 10, left: 12 }} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.info}
           onPress={() => {
@@ -47,7 +47,7 @@ const StartEngineScreen = () => {
         </TouchableOpacity>
       </View>
       <View>
-        <Image source={require('../assets/cby.png')} style={{ height: 310, width: 355, left: 6, bottom: 113 }} />
+        <Image source={require('../assets/cybertruck2.0.png')} style={{ height: 350, width: 365, left: -15, bottom: 85 }} />
         
       </View>
 

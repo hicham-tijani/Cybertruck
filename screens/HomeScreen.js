@@ -14,7 +14,7 @@ const HomeScreen = () => {
         <SafeAreaView style={styles.container}
             screenOptions={{ headerShown: false }}>
             <View style={tw`p-5 right-20 top-5`}>
-                <Text style={tw`text-gray-400 left-36`}>TESLA</Text>
+            <Image source={require('../assets/Teslalogo.png')} style={{ height: 18, width: 59, left: 133 , top:4}} />
                 <Image
                     style={{
                         width: 170,
