@@ -41,7 +41,7 @@ const HomeScreen = () => {
                  
                 <Image source={require('../assets/print.png')} style={{ height: 45, width: 45}} />
                 </TouchableOpacity>
-                <Text style={tw`text-white top-4 left-2`}>Scan to open the car</Text>
+                <Text style={tw`text-white top-4 left-2`}>tap to open the car</Text>
             </View>
 
         </SafeAreaView>
